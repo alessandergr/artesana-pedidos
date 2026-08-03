@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "react-native-store-app",
-    "slug": "react-native-store-app",
+    "name": "Artesana Pedidos",
+    "slug": "artesana-pedidos",
     "version": "1.0.0",
-    "scheme": "react-native-store-app",
+    "scheme": "artesana-pedidos",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",
@@ -11,7 +11,7 @@
     "splash": {
       "image": "./src/assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFF7FA"
     },
     "ios": {
       "supportsTablet": true
@@ -19,7 +19,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFF7FA"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false

@@ -1,55 +1,55 @@
 export const darkColor = {
   primary: {
-    light: "#A66CFF",
-    default: "#8D3CFF",
-    dark: "#6F00ED",
+    light: "#F3A9C4",
+    default: "#D96C9D",
+    dark: "#B84F7D",
   },
 
   secondary: {
-    light: "#FFD85B",
-    default: "#FFC820",
-    dark: "#D9A800",
+    light: "#F8DDE7",
+    default: "#E9A8C0",
+    dark: "#C97C9A",
   },
 
-  background: "#0F1117",
-  surface: "#181C25",
-  surfaceSecondary: "#232937",
+  background: "#2B2026",
+  surface: "#382A31",
+  surfaceSecondary: "#493740",
 
-  border: "#e4e6ebff",
-  divider: "#3F475A",
+  border: "#684F5A",
+  divider: "#5A434D",
 
-  success: "#4ADE80",
-  warning: "#FBBF24",
-  error: "#F87171",
-  info: "#60A5FA",
+  success: "#65B67A",
+  warning: "#E8B04A",
+  error: "#E46B75",
+  info: "#72A7D8",
 
   overlay: "rgba(0, 0, 0, 0.7)",
 };
 
 export const lightColor = {
   primary: {
-    light: "#8D3CFF",
-    default: "#6F00ED",
-    dark: "#5600B8",
+    light: "#F3A9C4",
+    default: "#D96C9D",
+    dark: "#B84F7D",
   },
 
   secondary: {
-    light: "#FFD85B",
-    default: "#FFC820",
-    dark: "#E6B000",
+    light: "#F8DDE7",
+    default: "#E9A8C0",
+    dark: "#C97C9A",
   },
 
-  background: "#F8F9FC",
+  background: "#FFF7FA",
   surface: "#FFFFFF",
-  surfaceSecondary: "#F2F4F8",
+  surfaceSecondary: "#FBEAF1",
 
-  border: "#b8babeff",
-  divider: "#CBD5E1",
+  border: "#E8C9D5",
+  divider: "#F1D6E0",
 
-  success: "#22C55E",
-  warning: "#F59E0B",
-  error: "#EF4444",
-  info: "#3B82F6",
+  success: "#4F9566",
+  warning: "#D28A25",
+  error: "#C94B5B",
+  info: "#4E8DBD",
 
-  overlay: "rgba(15, 23, 42, 0.45)",
+  overlay: "rgba(61, 44, 53, 0.45)",
 };
