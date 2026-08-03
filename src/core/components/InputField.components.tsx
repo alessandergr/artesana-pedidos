@@ -22,7 +22,7 @@ export const InputField = ({ label, ...props }: InputFieldProps) => {
           styles.input,
           {
             borderColor: palette.colors.border,
-            height: props.multiline ? 250 : undefined,
+            height: props.multiline ? 120 : undefined,
           },
         ]}
       />

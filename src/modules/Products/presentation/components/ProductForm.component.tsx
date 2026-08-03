@@ -45,22 +45,22 @@ export const ProductForm: FC<ProductFormProps> = ({
             <InputField
               onChangeText={onChangeTitle}
               value={title}
-              label="Título"
-              placeholder="Escribe un título"
+              label="Nombre del producto"
+              placeholder="Ejemplo: Pulsera artesanal"
             />
             <InputField
               value={description}
               onChangeText={onChangeMessage}
-              label="Mensaje"
-              placeholder="¿Qué está pasando?"
+              label="Descripción"
+              placeholder="Describe brevemente el producto"
               multiline
-              numberOfLines={600}
+              numberOfLines={4}
               textAlignVertical="top"
             />
           </View>
           <View style={{ marginTop: 20 }}>
             <CustomButton
-              title={loading ? "Cargando..." : "Publicar"}
+              title={loading ? "Guardando..." : "Guardar producto"}
               onPress={onSubmit}
               disabled={disabled}
             />

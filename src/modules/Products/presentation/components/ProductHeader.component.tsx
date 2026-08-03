@@ -23,12 +23,13 @@ export const ProductHeader: FC<ProductHeaderProps> = ({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 30,
+    marginBottom: 20,
   },
   title: {
-    fontSize: 28,
+    flex: 1,
+    marginRight: 12,
+    fontSize: 23,
     fontWeight: "bold",
   },
 });

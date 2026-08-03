@@ -5,21 +5,21 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: "#B84F7D",
-        tabBarInactiveTintColor: "#8C7580",
-        tabBarStyle: {
-          backgroundColor: "#FFFFFF",
-          borderTopColor: "#F1D6E0",
-          height: 68,
-          paddingTop: 7,
-          paddingBottom: 9,
-        },
-        tabBarLabelStyle: {
-          fontSize: 12,
-          fontWeight: "600",
-        },
-      }}
+      headerShown: false,
+      tabBarActiveTintColor: "#7F4A2A",
+      tabBarInactiveTintColor: "#907C6E",
+      tabBarStyle: {
+        backgroundColor: "#FFFFFF",
+        borderTopColor: "#EADFD3",
+        height: 68,
+        paddingTop: 7,
+        paddingBottom: 9,
+      },
+      tabBarLabelStyle: {
+        fontSize: 12,
+        fontWeight: "600",
+      },
+    }}
     >
       <Tabs.Screen
         name="products"

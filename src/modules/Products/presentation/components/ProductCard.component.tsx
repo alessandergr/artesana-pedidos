@@ -52,7 +52,7 @@ export const ProductCard: FC<ProductCardProps> = ({
         </View>
       </View>
       <Text
-        numberOfLines={4}
+        numberOfLines={2}
         style={[styles.description, { color: palette.texts.secondary }]}
       >
         {description}
@@ -63,26 +63,26 @@ export const ProductCard: FC<ProductCardProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
     padding: 16,
-    borderRadius: 8,
+    borderRadius: 14,
   },
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
   },
   actions: {
     flexDirection: "row",
-    gap: 8,
+    gap: 4,
   },
   title: {
-    maxWidth: "65%",
-    fontSize: 20,
+    flex: 1,
+    marginRight: 8,
+    fontSize: 18,
     fontWeight: "bold",
   },
   description: {
-    fontSize: 14,
-    textAlign: "justify",
+    marginTop: 8,
+    fontSize: 15,
+    lineHeight: 21,
   },
 });

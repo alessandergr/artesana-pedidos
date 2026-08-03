@@ -49,11 +49,11 @@ export const ProductListScreen = () => {
   return (
     <>
       <Background>
-        <ProductHeader title="Mi Lista" onAddPress={handleAddPress} />
+        <ProductHeader title="Catálogo artesanal" onAddPress={handleAddPress}/>
         <FlatList
           data={dataStates.data}
           renderItem={renderItem}
-          contentContainerStyle={{ gap: 20 }}
+          contentContainerStyle={{ gap: 12, paddingBottom: 20 }}
           showsVerticalScrollIndicator={false}
         />
       </Background>
@@ -61,8 +61,8 @@ export const ProductListScreen = () => {
         onCancel={hiddenModal}
         visible={isVisibleModal}
         onConfirm={confirmDelete}
-        title={`¿Desea eliminar titulo?`}
-        message="Al eliminar el titulo no podra ser recuperado"
+        title="¿Eliminar producto?"
+        message="El producto eliminado no podrá recuperarse."
       />
     </>
   );
