@@ -9,36 +9,48 @@ import { useThemeContext } from "../contexts/theme.context";
 
 interface InputFieldProps extends TextInputProps {
   label?: string;
+  error?: string;
 }
 
-export const InputField = ({ label, ...props }: InputFieldProps) => {
+export const InputField = ({
+  label,
+  error,
+  ...props
+}: InputFieldProps) => {
   const { palette } = useThemeContext();
 
-  const renderInput = () => {
-    return (
+  return (
+    <View style={styles.container}>
+      {label && (
+        <Text style={[styles.label, { color: palette.texts.primary }]}>
+          {label}
+        </Text>
+      )}
+
       <TextInput
         {...props}
+        placeholderTextColor={palette.texts.tertiary}
         style={[
           styles.input,
           {
-            borderColor: palette.colors.border,
-            height: props.multiline ? 120 : undefined,
+            color: palette.texts.primary,
+            backgroundColor: palette.colors.surface,
+            borderColor: error
+              ? palette.colors.error
+              : palette.colors.border,
+            minHeight: props.multiline ? 120 : 54,
           },
+          props.style,
         ]}
       />
-    );
-  };
 
-  if (label && label.length > 0) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.label}>{label}</Text>
-        {renderInput()}
-      </View>
-    );
-  }
-
-  return renderInput();
+      {error && (
+        <Text style={[styles.error, { color: palette.colors.error }]}>
+          {error}
+        </Text>
+      )}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -47,13 +59,17 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
-    fontWeight: "500",
+    fontWeight: "600",
   },
   input: {
     borderWidth: 1,
-    borderRadius: 8,
-    paddingVertical: 16,
-    paddingHorizontal: 12,
+    borderRadius: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 14,
     fontSize: 16,
+  },
+  error: {
+    marginLeft: 4,
+    fontSize: 13,
   },
 });

@@ -1,6 +1,6 @@
 import { CustomButton } from "@/core/components/CustomButton.component";
 import { InputField } from "@/core/components/InputField.components";
-import { FC } from "react";
+import { FC, useState } from "react";
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -23,13 +23,43 @@ interface ProductFormProps {
 
 export const ProductForm: FC<ProductFormProps> = ({
   title,
-  onSubmit,
   description,
-  loading,
+  onSubmit,
   disabled,
+  loading,
   onChangeTitle,
   onChangeMessage,
 }) => {
+  const [titleError, setTitleError] = useState("");
+  const [descriptionError, setDescriptionError] = useState("");
+
+  const validateAndSubmit = () => {
+    const cleanTitle = (title || "").trim();
+    const cleanDescription = (description || "").trim();
+
+    let titleMessage = "";
+    let descriptionMessage = "";
+
+    if (!cleanTitle) {
+      titleMessage = "Ingrese el nombre del producto.";
+    } else if (cleanTitle.length < 3) {
+      titleMessage = "El nombre debe tener al menos 3 caracteres.";
+    }
+
+    if (!cleanDescription) {
+      descriptionMessage = "Ingrese una descripción.";
+    }
+
+    setTitleError(titleMessage);
+    setDescriptionError(descriptionMessage);
+
+    if (titleMessage || descriptionMessage) {
+      return;
+    }
+
+    onSubmit();
+  };
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -43,26 +73,38 @@ export const ProductForm: FC<ProductFormProps> = ({
         >
           <View style={styles.formContainer}>
             <InputField
-              onChangeText={onChangeTitle}
               value={title}
               label="Nombre del producto"
               placeholder="Ejemplo: Pulsera artesanal"
+              maxLength={50}
+              error={titleError}
+              onChangeText={(text) => {
+                onChangeTitle(text);
+                setTitleError("");
+              }}
             />
+
             <InputField
               value={description}
-              onChangeText={onChangeMessage}
               label="Descripción"
               placeholder="Describe brevemente el producto"
               multiline
               numberOfLines={4}
+              maxLength={200}
               textAlignVertical="top"
+              error={descriptionError}
+              onChangeText={(text) => {
+                onChangeMessage(text);
+                setDescriptionError("");
+              }}
             />
           </View>
-          <View style={{ marginTop: 20 }}>
+
+          <View style={styles.buttonContainer}>
             <CustomButton
               title={loading ? "Guardando..." : "Guardar producto"}
-              onPress={onSubmit}
-              disabled={disabled}
+              onPress={validateAndSubmit}
+              disabled={disabled || loading}
             />
           </View>
         </ScrollView>
@@ -81,5 +123,8 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     gap: 24,
+  },
+  buttonContainer: {
+    marginTop: 20,
   },
 });
